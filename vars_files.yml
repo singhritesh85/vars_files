@@ -1,0 +1,15 @@
+---
+- name: vars_files.yml
+  hosts: all
+  vars_files:
+  - abc.yml
+  tasks: 
+  - name: install apache2
+    apt: 
+      name: "{{value1}}"
+      state: present
+
+  - name: start the service of apache2
+    service:
+      name: "{{value1}}"
+      state: started
